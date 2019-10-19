@@ -1,0 +1,25 @@
+0,15,30,45 23 * * * /mnt/disks/wrf-mod/get_18.bash > /mnt/disks/wrf-mod/get.log
+15 0 * * * /mnt/disks/wrf-mod/runwps4_18.bash > /mnt/disks/wrf-mod/runwps4.log
+30,45 0-1 * * * /mnt/disks/wrf-mod/runwrf4_A_18.bash > /mnt/disks/wrf-mod/run_A.log
+30,45 0-1 * * * /mnt/disks/wrf-mod/runwrf4_C_18.bash > /mnt/disks/wrf-mod/run_C.log
+30,45 0-1 * * * /mnt/disks/wrf-mod/runwrf4_E_18.bash > /mnt/disks/wrf-mod/run_E.log
+30,45 0-1 * * * /mnt/disks/wrf-mod/runwrf4_SE_18.bash > /mnt/disks/wrf-mod/run_SE.log
+0,15,30,45 11-18 * * * /mnt/disks/wrf-mod/stations.sh > /mnt/disks/wrf-mod/stations.log
+0,15,30,45 11-18 * * * /mnt/disks/wrf-mod/export_wt.sh > /mnt/disks/wrf-mod/export_wt.log
+
+0,15,30,45 11-18 * * * /mnt/disks/wrf-mod/progs/export_wt_docker.sh 18 A d0 > /mnt/disks/wrf-mod/progs/export_wt_A.log
+0,15,30,45 11-18 * * * /mnt/disks/wrf-mod/progs/export_wt_docker.sh 18 C d0 > /mnt/disks/wrf-mod/progs/export_wt_C.log
+0,15,30,45 11-18 * * * /mnt/disks/wrf-mod/progs/export_wt_docker.sh 18 E d0 > /mnt/disks/wrf-mod/progs/export_wt_E.log
+0,15,30,45 11-18 * * * /mnt/disks/wrf-mod/progs/export_wt_docker.sh 18 SE d0 > /mnt/disks/wrf-mod/progs/export_wt_SE.log
+
+
+
+#0 4 * * * /mnt/disks/wrf-mod/stations_06.sh > /mnt/disks/wrf-mod/stations2.log
+0 23 * * * /mnt/disks/wrf-mod/gsmap.sh > /mnt/disks/wrf-mod/gsmap.log
+15 23 * * * /mnt/disks/wrf-mod/wrf.sh > /mnt/disks/wrf-mod/wrf.log
+#0 8-16 * * * /mnt/disks/wrf-mod/Plots/cpgif.bash
+# push wrf-model data to curw db at 23 everyday
+#15 18 * * * /home/uwcc-admin/wrf-model-data-pusher/runner.sh >> /home/uwcc-admin#/wrf-model-data-pusher/cronjob.log
+
+# push wrf-v4 data to new curw_fcst db at 1 everyday
+#30 19 * * * /home/uwcc-admin/wrf_v4_data_pusher/daily_runner.sh >> /home/uwcc-admin/wrf_v4_data_pusher/cronjob.log
