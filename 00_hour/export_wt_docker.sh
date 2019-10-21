@@ -24,5 +24,6 @@ ln -fs /mnt/disks/wrf-mod/NCLoutput_${GFS_WT}/d01__${GFS_WT}.nc /mnt/disks/wrf_n
 ln -fs /mnt/disks/wrf-mod/NCLoutput_${GFS_WT}/d03__${GFS_WT}.nc /mnt/disks/wrf_nfs/wrf/4.0/${GFS_d}/${GFS_HR}/${rundate1}/${GFS_WT}/d03__${GFS_WT}_${GFS_HR}.nc
 cd /mnt/disks/wrf_nfs/wrf/4.0/${GFS_d}/${GFS_HR}/${rundate1}/${GFS_WT}
 python3 plot_rain_${GFS_WT}_d01_d03_v2.py
+
 #rm *.bash
 exit;
